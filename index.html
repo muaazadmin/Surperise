@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Laiba ❤️</title>
+
+<style>
+body{
+  margin:0;
+  font-family:sans-serif;
+  background:black;
+  color:white;
+  text-align:center;
+  overflow-y:auto; /* ✅ FIXED SCROLL */
+}
+
+/* background */
+.bg{
+  position:fixed;
+  width:100%;
+  height:100%;
+  background:url('https://res.cloudinary.com/digbzxwkn/image/upload/v1773932017/Gemini_Generated_Image_4p4nwf4p4nwf4p4n_epapcj.png') center/cover;
+  filter:brightness(0.4);
+  z-index:-1;
+}
+
+/* screens */
+.screen{
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+  padding:20px;
+}
+
+/* buttons */
+button,input{
+  padding:12px;
+  border-radius:20px;
+  border:none;
+  margin-top:10px;
+}
+
+button{
+  background:#ff4d6d;
+  color:white;
+}
+
+/* hidden */
+#lock,#gift,#main{display:none}
+
+/* gift */
+.gift{
+  font-size:70px;
+}
+
+/* images */
+.imgBox{
+  width:90%;
+  max-width:320px;
+  margin:15px auto;
+  border:2px solid #ff4d6d;
+  box-shadow:0 0 15px #ff4d6d;
+}
+.imgBox img{
+  width:100%;
+}
+
+/* chat */
+.msg{
+  background:#075e54;
+  padding:10px;
+  margin:6px;
+  border-radius:10px;
+  max-width:80%;
+}
+
+/* 💌 LETTER DESIGN (UPDATED) */
+#letter{
+  display:none;
+  margin-top:20px;
+  background:rgba(255,255,255,0.1);
+  padding:20px;
+  border-radius:15px;
+  line-height:1.6;
+  font-size:15px;
+  text-align:left;
+  box-shadow:0 0 15px rgba(255,77,109,0.5);
+}
+
+/* final */
+#final{
+  display:none;
+  font-size:20px;
+  margin-top:20px;
+}
+
+/* hearts */
+.heart{
+  position:fixed;
+  color:#ff4d6d;
+  animation:float 6s linear infinite;
+}
+@keyframes float{
+  100%{transform:translateY(-1000px);opacity:0}
+}
+</style>
+</head>
+
+<body>
+
+<div class="bg"></div>
+
+<!-- INTRO -->
+<div class="screen" id="intro">
+  <h2>Tap to open something special ❤️</h2>
+  <button onclick="start()">Open</button>
+</div>
+
+<!-- LOCK -->
+<div class="screen" id="lock">
+  <h3>Enter Secret Code 🔐</h3>
+  <input id="code">
+  <button onclick="unlock()">Unlock</button>
+</div>
+
+<!-- GIFT -->
+<div class="screen" id="gift">
+  <div class="gift" onclick="openGift()">🎁</div>
+  <p>Tap the gift</p>
+</div>
+
+<!-- MAIN -->
+<div class="screen" id="main">
+
+<h2>Eid Mubarak Laiba ❤️</h2>
+<p>From Muaaz 💖</p>
+
+<!-- images -->
+<div class="imgBox"><img src="https://res.cloudinary.com/digbzxwkn/image/upload/v1773931706/Gemini_Generated_Image_3um2po3um2po3um2_k0lqw7.png"></div>
+<div class="imgBox"><img src="https://res.cloudinary.com/digbzxwkn/image/upload/v1773931574/Gemini_Generated_Image_6xbfn16xbfn16xbf_sy9hzk.png"></div>
+<div class="imgBox"><img src="https://res.cloudinary.com/digbzxwkn/image/upload/v1773842862/Gemini_Generated_Image_c8i1ikc8i1ikc8i1_kzrb0g.png"></div>
+
+<button onclick="playVoice()">🎧 Hear My Voice</button>
+
+<div id="chat"></div>
+
+<!-- 💌 YOUR PARAGRAPH PERFECTLY FORMATTED -->
+<div id="letter">
+<strong>Eid Mubarak, Meri Janaman! 🌙✨</strong><br><br>
+
+Meri jan, I hope this Eid brings you all the happiness and blessings that your heart desires. May your days be filled with love, laughter, and the warmth of your loved ones. 💖<br><br>
+
+Yarruu, you are always in my prayers, and I’m so grateful to have you in my life. May Allah’s blessings shower upon you today and always. 🌟🙏<br><br>
+
+Enjoy this special day to the fullest, my dear! 💫 Eid Mubarak once again, Laiba! 🕌🎉<br><br>
+
+Or ha sara din soti na rahna jaldi uthna or mujha piyari piyari si pics baj na ayi samjh 😏❤️
+</div>
+
+<div id="final">
+💍 I just want you in my life… always ❤️
+</div>
+
+</div>
+
+<!-- AUDIO -->
+<audio id="bgMusic" loop>
+<source src="https://res.cloudinary.com/digbzxwkn/video/upload/v1773847696/download_bpouyx.mp3">
+</audio>
+
+<audio id="voice">
+<source src="https://res.cloudinary.com/digbzxwkn/video/upload/v1773844612/Voice_260318_193044_sdqven.3gp">
+</audio>
+
+<script>
+
+function start(){
+  intro.style.display="none";
+  lock.style.display="flex";
+  bgMusic.play();
+}
+
+function unlock(){
+  if(code.value==="ILUVUMuaaz"){
+    lock.style.display="none";
+    gift.style.display="flex";
+  } else alert("Wrong code ❤️");
+}
+
+function openGift(){
+  gift.style.display="none";
+  main.style.display="block";
+
+  let msgs=[
+    "Eid Mubarak ❤️",
+    "You are my happiness 💖",
+    "I really care about you 😊",
+    "Stay with me forever 🌙"
+  ];
+
+  msgs.forEach((m,i)=>{
+    setTimeout(()=>{
+      let d=document.createElement("div");
+      d.className="msg";
+      d.innerText=m;
+      chat.appendChild(d);
+    },i*1500);
+  });
+
+  setTimeout(()=>{letter.style.display="block"},7000);
+  setTimeout(()=>{final.style.display="block"},12000);
+}
+
+function playVoice(){
+  bgMusic.pause();
+  voice.play();
+  voice.onended=()=>{bgMusic.play();}
+}
+
+/* hearts */
+for(let i=0;i<40;i++){
+ let h=document.createElement("div");
+ h.className="heart";
+ h.innerHTML="❤️";
+ h.style.left=Math.random()*100+"vw";
+ h.style.animationDuration=(Math.random()*3+3)+"s";
+ document.body.appendChild(h);
+}
+
+</script>
+
+</body>
+</html>
